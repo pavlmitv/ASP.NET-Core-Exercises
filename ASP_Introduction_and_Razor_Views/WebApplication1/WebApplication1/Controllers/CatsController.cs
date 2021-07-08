@@ -43,10 +43,5 @@ namespace WebApplication1.Controllers
             return Ok(model);
         }
 
-        public IActionResult PartialViewExample()
-        {
-            var cats = new List<CatViewModel>();
-            return View(cats);
-        }
     }
 }

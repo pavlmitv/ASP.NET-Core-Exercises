@@ -54,3 +54,12 @@
 
 @*създаваме anchor, който води към Create view, чрез tag helper: *@
 <a asp-controller="Cats" asp-action="Create">Create cat anchor</a>
+
+
+
+@foreach (var cat in Model)
+{
+    <partial name="_Cat" model="cat" />
+} 
+
+<vc:custom-component name="some component, but it's custom"></vc:custom-component>
