@@ -23,11 +23,29 @@ namespace WebApplication1.Controllers
 
 
 
+
             var cats = new List<CatViewModel>
             {
                 new CatViewModel { Name = "Pesho", Age = 12 },
                 new CatViewModel { Name = "Gosho", Age = 3 },
             };
+
+            ViewBag.AdvancedLayout = false;
+
+            return View(cats);
+        }
+
+        public IActionResult Create() => View();
+
+        [HttpPost]
+        public IActionResult Create(CatViewModel model)
+        {
+            return Ok(model);
+        }
+
+        public IActionResult PartialViewExample()
+        {
+            var cats = new List<CatViewModel>();
             return View(cats);
         }
     }

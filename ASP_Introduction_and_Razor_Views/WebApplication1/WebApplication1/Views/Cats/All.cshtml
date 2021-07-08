@@ -25,10 +25,32 @@
 
 @ViewData["Name"]
 
+@using WebApplication1.Services
 
 @model List<CatViewModel>
 
+@inject ICustomViewData customViewData
+
 @foreach (var cat in Model)
-    {
-        <li>@cat.Name is @cat.Age years old.</li>
-    }
+{
+    <li>@cat.Name is @cat.Age years old.</li>
+
+}
+
+<h1>
+    All cats - @(Model.Count*10) cats
+    <br />
+    Cats: @(Model.Any() ? Model.Count : "No cats")
+
+</h1>
+
+@{
+    Layout = "_Advanced";
+}
+
+@*
+    This is a Razor comment.
+*@
+
+@*създаваме anchor, който води към Create view, чрез tag helper: *@
+<a asp-controller="Cats" asp-action="Create">Create cat anchor</a>
